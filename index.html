@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
+
+    <title>MY POSITION</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
-      }
+        height: 800px;
+        width: 800px;
+       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
+      .image{
+          width:400px;
+          height:400px;
+          position: fixed;
+          top:350px;
+          left:900px;
+        }
     </style>
   </head>
   <body>
@@ -28,8 +37,8 @@
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 4.397, lng: 150.644},
-          zoom: 6
+          center: {lat: 24.397, lng: 150.644},
+          zoom: 13
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -42,7 +51,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('媽!我在這裡!');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -63,5 +72,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdNg-x7NMF71S-xZ427wC5zkW1cLx4WNQ&callback=initMap">
     </script>
+
+    <img class="image" src="https://imgs.niusnews.com/upload/imgs/default/2017FebW/odjd/0.gif"  >
   </body>
 </html>
